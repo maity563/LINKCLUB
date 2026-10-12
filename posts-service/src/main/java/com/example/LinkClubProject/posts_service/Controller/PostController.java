@@ -38,7 +38,7 @@ public class PostController {
     }
 
 
-    @GetMapping("/{postId}")
+    @GetMapping("/{postid}")
     public ResponseEntity<PostDTO> getPosts(@PathVariable  Long postid)
     {
          PostDTO postDTO=postservice.getbyPostid(postid);
@@ -47,7 +47,7 @@ public class PostController {
     }
 
 
-    @GetMapping("/users/{userId}/getallposts")
+    @GetMapping("/users/{userid}/getallposts")
     public ResponseEntity<List<PostDTO>> getallposts(@PathVariable Long userid) {
         List<PostDTO> p=postservice.getallpostsbyuser(userid);
 

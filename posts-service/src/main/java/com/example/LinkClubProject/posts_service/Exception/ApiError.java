@@ -18,10 +18,10 @@ public class ApiError {
         this.localDateTime=LocalDateTime.now();
     }
 
-    public ApiError(){
+    public ApiError(HttpStatus httpStatus, String error) {
         this();
-        this.httpStatus=httpStatus;
-        this.error=error;
+        this.httpStatus = httpStatus;
+        this.error = error;
     }
     
 }
