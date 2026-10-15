@@ -1,12 +1,13 @@
-package main.java.com.example.LinkClubProject.ConnectionService.service;
+package com.example.LinkClubProject.ConnectionService.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import main.java.com.example.LinkClubProject.ConnectionService.entity.Person;
-import main.java.com.example.LinkClubProject.ConnectionService.repository.Personrepository;
+import com.example.LinkClubProject.ConnectionService.entity.Person;
+import com.example.LinkClubProject.ConnectionService.repository.Personrepository;
+
 
 @Service 
 public class ConnectionService {

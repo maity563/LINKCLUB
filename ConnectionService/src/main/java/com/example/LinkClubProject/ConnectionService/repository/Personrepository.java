@@ -1,10 +1,11 @@
-package main.java.com.example.LinkClubProject.ConnectionService.repository;
+package com.example.LinkClubProject.ConnectionService.repository;
 
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.stereotype.Repository;
 
-import main.java.com.example.LinkClubProject.ConnectionService.entity.Person;
+import com.example.LinkClubProject.ConnectionService.entity.Person;
+
 import java.util.List;
 import java.util.Optional;
 

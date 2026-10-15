@@ -18,9 +18,8 @@ import lombok.Setter;
 @Entity 
 @Getter 
 @Setter 
-@Builder 
+@Builder  
 @NoArgsConstructor 
-@AllArgsConstructor
 public class PostLikes {
 
     @Id 
