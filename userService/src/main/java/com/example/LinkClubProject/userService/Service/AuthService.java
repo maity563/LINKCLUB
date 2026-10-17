@@ -46,7 +46,7 @@ public class AuthService {
             throw new BadRequestException("The email "+loginRequestDTO.getEmail()+" does not exist.");
         }
         
-        User user=userrep.findByEmail(loginRequestDTO.getEmail()).getLast();
+        User user=userrep.findByEmail(loginRequestDTO.getEmail()).get(0);
 
         
 

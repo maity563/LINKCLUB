@@ -18,7 +18,8 @@ import lombok.Setter;
 @Entity 
 @Getter 
 @Setter 
-@Builder  
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor 
 public class PostLikes {
 
@@ -35,4 +36,11 @@ public class PostLikes {
 
     @CreationTimestamp 
     private LocalDateTime localDateTime;
+
+    /*public  PostLikes(Long userid,Long postid)
+    {
+        this.postid=postid;
+        this.userid=userid;
+
+    }*/
 }

@@ -9,10 +9,10 @@ import lombok.Setter;
 
 @Data 
 @Getter 
-@Setter 
+@Setter
+@NoArgsConstructor 
 @Builder 
 @AllArgsConstructor 
-@NoArgsConstructor 
 public class SignUpRequestDTO {
 
     private String name;

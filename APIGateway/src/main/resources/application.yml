@@ -1,0 +1,21 @@
+spring:
+    application: 
+        name: APIGateway
+
+    cloud:
+       gateway:
+           server:
+              webflux:
+                  routes:
+                  - id : userService
+                    uri: lb://USER-SERVICE 
+                    predicates:
+                       -Path= /api/v1/user/**
+                    filters:
+                       -StripPrefix=2
+                  - id:  posts-service
+                    uri: lb://POST-SERVICE
+                    predicates:
+                        -Path= /api/v1/post/**
+                    filters:
+                        -StripPrefix=2            

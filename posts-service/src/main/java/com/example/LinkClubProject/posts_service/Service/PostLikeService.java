@@ -29,10 +29,7 @@ public class PostLikeService {
             throw new BadRequestException("Cannot Like the post again");
         }
        
-        PostLikes postLikes=PostLikes.builder()
-                                       .postid(postId)
-                                       .userid(userid)
-                                       .build();
+        PostLikes postLikes=PostLikes.builder().userid(userid).postid(postId).build();
 
         postlikerep.save(postLikes);     
         
