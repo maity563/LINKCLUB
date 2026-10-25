@@ -8,12 +8,14 @@ spring:
   cloud:
     gateway:
       server:
-        webmvc:
+        webflux:
           routes:
             - id: userService
               uri: lb://USERSERVICE
               predicates:
-                - Path=/api/v1/user/** 
+                - Path=/api/v1/user/**
+              filters:
+                - AuthenticationFilter
 
             - id: posts-service
               uri: lb://POSTS-SERVICE
