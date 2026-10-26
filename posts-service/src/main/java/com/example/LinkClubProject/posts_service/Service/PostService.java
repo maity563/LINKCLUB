@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import com.example.LinkClubProject.posts_service.Entity.Post;
 import com.example.LinkClubProject.posts_service.Exception.ResourceNotFoundException;
 import com.example.LinkClubProject.posts_service.Repository.PostRepository;
+import com.example.LinkClubProject.posts_service.auth.AuthContextHolder;
+import com.example.LinkClubProject.posts_service.client.ConnectionServiceClient;
+import com.example.LinkClubProject.posts_service.dto.PersonDto;
 import com.example.LinkClubProject.posts_service.dto.PostCreateRequestDTO;
 import com.example.LinkClubProject.posts_service.dto.PostDTO;
 
@@ -33,7 +36,15 @@ public class PostService {
     }
 
 
+    @Autowired private ConnectionServiceClient connectionServiceClient;
+
     public PostDTO  getbyPostid(Long postid){
+  
+        Long userid=AuthContextHolder.getuserId();
+
+        List<PersonDto> personDTOList=connectionServiceClient.getFirstDegreeConnections(userid);
+
+
         Post p= postrepo.findById(postid).orElseThrow(()-> new ResourceNotFoundException("Post not Found with post Id = "+postid));
 
         PostDTO postDTO=modelMapper.map(p, PostDTO.class);

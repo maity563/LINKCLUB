@@ -25,7 +25,7 @@ public class ConnectionController {
 
 
     @GetMapping("/{userId}/first-degree-users")
-    public ResponseEntity<?> getMethodName(@PathVariable Long userId) {
+    public ResponseEntity<?> getFirstDegreeConnections(@PathVariable Long userId) {
         
         List<Person> p=connectionService.getfirstdegreepersons(userId);
 

@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.LinkClubProject.posts_service.Service.PostService;
+import com.example.LinkClubProject.posts_service.auth.AuthContextHolder;
 import com.example.LinkClubProject.posts_service.dto.PostCreateRequestDTO;
 import com.example.LinkClubProject.posts_service.dto.PostDTO;
 
@@ -41,6 +42,7 @@ public class PostController {
     @GetMapping("/{postid}")
     public ResponseEntity<PostDTO> getPosts(@PathVariable  Long postid)
     {
+         Long userid=AuthContextHolder.getuserId();
          PostDTO postDTO=postservice.getbyPostid(postid);
          
          return new ResponseEntity<>(postDTO,HttpStatus.OK);
